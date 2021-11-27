@@ -2,14 +2,18 @@
   "scripts": {
     "test": "jest --verbose",
     "test-coverage": "jest --coverage",
-    "start": "nodemon server"
+    "start:dev": "nodemon server",
+    "start:prod": "webpack && cd dist && node build.js"
   },
   "devDependencies": {
     "jest": "^27.3.1",
     "nodemon": "^2.0.15",
-    "prettier": "2.4.1"
+    "prettier": "2.4.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "uuid": "^8.3.2"
   }
 }
