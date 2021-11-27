@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config({
     path: path.join(__dirname, ".env"),
 });
 const webpack = require("webpack");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
     mode: "production",
@@ -17,4 +18,5 @@ module.exports = {
             "process.env": dotenv.parsed,
         }),
     ],
+    externals: [nodeExternals()],
 };

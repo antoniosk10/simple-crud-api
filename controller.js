@@ -9,6 +9,14 @@ const getPerson = (_, id) => {
 
     if (id) {
         response.data = db.filter(item => item.id === id);
+
+        if (response.data.length) {
+            return response;
+        }
+
+        response.data = null;
+        response.status = 404;
+        response.message = "ID isn't exist";
         return response;
     }
 

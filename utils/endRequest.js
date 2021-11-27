@@ -3,6 +3,6 @@ module.exports = (res, {status, data, message}) => {
     if (data) {
         res.end(JSON.stringify(data));
     } else {
-        res.end(message);
+        res.end(JSON.stringify(message));
     }
 };

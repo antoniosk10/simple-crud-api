@@ -4,6 +4,7 @@ const checkMethod = require("./checkMethod");
 
 module.exports = (req, body) => {
     const id = req.url.split("/").filter(el => !!el)[1];
+
     return (
         checkMethod(req.method) ||
         checkRequestURL(req) ||
